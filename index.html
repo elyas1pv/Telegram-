@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>خرید گروه‌های تلگرام - Elyas Store</title>
+  <style>
+    body {
+      font-family: "Vazir", Tahoma, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin-top: 5px;
+      font-weight: 300;
+    }
+    main {
+      max-width: 700px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #007acc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    /* بخش محصولات */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product-card {
+      background: #f0f8ff;
+      border: 1px solid #cce4f7;
+      border-radius: 8px;
+      width: 200px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .product-image {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: #007acc;
+    }
+    .product-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .product-desc {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    /* فرم تماس */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="tel"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline-offset: 2px;
+      outline-color: transparent;
+      transition: outline-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus {
+      outline-color: #007acc;
+      border-color: #007acc;
+    }
+    button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005f99;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 40px;
+    }
+    a.telegram-link {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.telegram-link:hover {
+      text-decoration: underline;
+    }
+    /* ریسپانسیو */
+    @media (max-width: 480px) {
+      .products {
+        flex-direction: column;
+        align-items: center;
+      }
+      .product-card {
+        width: 90%;
+      }
+      main {
+        margin: 20px 10px;
+      }
+      form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>خرید گروه‌های تلگرام</h1>
+    <p>فروش گروه‌های تلگرام خود را به Elyas Store بسپارید</p>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>روال کار</h2>
+      <p>اگر صاحب گروه تلگرام هستید و قصد فروش آن را دارید، کافی است اطلاعات خود را در فرم زیر وارد کنید. ما با شما تماس خواهیم گرفت.</p>
+    </section>
+
+    <section class="products">
+      <h2>نمونه گروه‌های تلگرام</h2>
+      <div class="products">
+        <div class="product-card">
+          <div class="product-image">📱</div>
+          <div class="product-title">گروه فناوری</div>
+          <div class="product-desc">گروه فعال با ۲۰۰۰ عضو درباره تکنولوژی و گجت‌ها</div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">🎮</div>
+          <div class="product-title">گروه بازی‌ها</div>
+          <div class="product-desc">محیط دوستانه و اخبار روز بازی‌های ویدیویی</div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">📚</div>
+          <div class="product-title">گروه کتابخوانی</div>
+          <div class="product-desc">به اشتراک گذاری کتاب و نقد و بررسی آثار مختلف</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form">
+      <h2>فرم تماس</h2>
+      <form id="contactForm">
+        <label for="name">نام کامل:</label>
+        <input type="text" id="name" name="name" placeholder="مثلاً علی رضایی" required />
+
+        <label for="telegramId">آیدی تلگرام:</label>
+        <input type="text" id="telegramId" name="telegramId" placeholder="مثلاً @elyas1pv" value="@elyas1pv" required />
+
+        <label for="phone">شماره تماس:</label>
+        <input type="tel" id="phone" name="phone" placeholder="مثلاً 09123456789" required />
+
+        <button type="submit">ارسال اطلاعات</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    تماس با ما:  
+    <a href="https://t.me/elyas1pv" class="telegram-link" target="_blank">@elyas1pv</a>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert('اطلاعات شما ثبت شد. به زودی با شما تماس می‌گیریم.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
