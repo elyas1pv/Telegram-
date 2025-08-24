@@ -1,232 +1,134 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GroupSell - خرید و فروش گروه و خدمات تلگرام</title>
-  <style>
-    @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>آموزش ترید</title>
+<style>
+    /* فونت و تم تیره */
     body {
-      margin: 0;
-      font-family: 'Vazir', Tahoma, sans-serif;
-      background: #0a0f24;
-      color: #f0f0f0;
-      direction: rtl;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+        font-family: Tahoma, sans-serif;
+        margin: 0;
+        background-color: #121212;
+        color: #f0f0f0;
     }
+    a { color: #1e90ff; text-decoration: none; }
     header {
-      background: linear-gradient(90deg, #4e54c8, #8f94fb);
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.3);
-      user-select: none;
+        background-color: #1a1a1a;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 900;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px #a3a9ff;
+    nav a { margin: 0 15px; font-weight: bold; }
+    main { padding: 20px; }
+    section { margin-bottom: 50px; }
+    h1,h2,h3 { color: #fff; }
+    .banner { text-align: center; padding: 50px 20px; background-color: #222; border-radius: 10px; }
+    .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+    .course-card {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        transition: transform 0.2s;
     }
-    header p {
-      margin-top: 10px;
-      font-weight: 500;
-      font-size: 1.3rem;
-      color: #d0d0ffcc;
+    .course-card:hover { transform: scale(1.05); }
+    img { max-width: 100%; border-radius: 10px; }
+    footer { text-align: center; padding: 20px; background-color: #1a1a1a; }
+    button {
+        padding: 10px 20px;
+        background-color: #1e90ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
     }
-    main {
-      flex: 1;
-      max-width: 1100px;
-      margin: 40px auto 60px;
-      padding: 0 15px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-      gap: 30px;
-    }
-    section {
-      background: #1f244d;
-      border-radius: 16px;
-      padding: 30px 25px;
-      box-shadow: 0 8px 20px rgba(75,85,180,0.7);
-      display: flex;
-      flex-direction: column;
-      user-select: none;
-    }
-    section h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #8ab4f8;
-      margin-bottom: 20px;
-      text-align: center;
-      text-shadow: 0 0 8px #5577ffbb;
-      user-select: text;
-    }
-    ul.price-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 15px 0;
-      user-select: text;
-    }
-    ul.price-list li {
-      font-size: 1.2rem;
-      padding: 8px 0;
-      border-bottom: 1px solid #3a3f6c;
-      display: flex;
-      justify-content: space-between;
-      color: #cbd1ffcc;
-    }
-    ul.price-list li:last-child {
-      border-bottom: none;
-    }
-    ul.price-list li span.price {
-      color: #4caf50;
-      font-weight: 800;
-      text-shadow: 0 0 6px #4caf50cc;
-    }
-    p.desc {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #bbbcee;
-      margin-top: 12px;
-      text-align: center;
-      user-select: text;
-    }
-    .btn-tg {
-      background: #25d366;
-      color: white;
-      border: none;
-      border-radius: 45px;
-      padding: 15px 0;
-      font-weight: 800;
-      font-size: 1.3rem;
-      text-align: center;
-      letter-spacing: 1.2px;
-      box-shadow: 0 6px 20px #25d366cc;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      text-decoration: none;
-      user-select: none;
-      margin-top: auto;
-      display: block;
-      cursor: pointer;
-    }
-    .btn-tg:hover {
-      background-color: #1ebe57;
-      box-shadow: 0 8px 25px #1ebe57cc;
-    }
-    .telegram-info {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 1rem;
-      color: #bbbcee;
-      user-select: text;
-      direction: ltr;
-      font-weight: 600;
-    }
-    footer {
-      text-align: center;
-      padding: 20px 15px;
-      font-size: 1rem;
-      color: #777aaa;
-      background: #0a0f24;
-      box-shadow: inset 0 1px 0 #222652;
-      user-select: none;
-    }
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 2.3rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      main {
-        margin: 25px 10px 50px;
-        grid-template-columns: 1fr;
-      }
-      section {
-        padding: 25px 20px;
-      }
-      ul.price-list li {
-        font-size: 1.1rem;
-      }
-      .btn-tg {
-        font-size: 1.15rem;
-        padding: 14px 0;
-      }
-    }
-  </style>
+    button:hover { background-color: #007acc; }
+</style>
 </head>
 <body>
 
 <header>
-  <h1>GroupSell</h1>
-  <p>خرید و فروش گروه‌ها و خدمات تلگرام با بهترین قیمت‌ها</p>
+    <div class="logo"><h2>ترید هوشمند</h2></div>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#courses">آموزش‌ها</a>
+        <a href="#practice">تمرین</a>
+        <a href="#download">دانلود جزوه</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس</a>
+    </nav>
 </header>
 
 <main>
+    <!-- صفحه اصلی -->
+    <section id="home" class="banner">
+        <h1>به سایت آموزش ترید خوش آمدید</h1>
+        <p>یاد بگیر روندها، کندل‌ها و پرایس اکشن را تحلیل کنی و ترید هوشمند داشته باشی</p>
+        <button onclick="location.href='#courses'">شروع یادگیری</button>
+    </section>
 
-  <!-- بخش گروه -->
-  <section>
-    <h2>خرید گروه‌های تلگرام</h2>
-    <ul class="price-list">
-      <li>گروه‌های سال ساخت 2015 تا 2022 <span class="price">۸۰۰,۰۰۰ تومان</span></li>
-      <li>گروه‌های سال ساخت 2023 <span class="price">۷۰۰,۰۰۰ تومان</span></li>
-      <li>گروه‌های سال ساخت 2024 (دو ماه اول) <span class="price">۴۰۰,۰۰۰ تومان</span></li>
-    </ul>
-    <p class="desc">
-      ما گروه‌ها را بر اساس تاریخ ساخت خریداری می‌کنیم.<br />
-      ملاک اعضا و فعالیت گروه نیست.<br />
-      برای فروش گروه خود روی دکمه زیر کلیک کنید و مستقیماً با ما در تلگرام ارتباط بگیرید.
-    </p>
-    <a href="https://t.me/group7sell" target="_blank" class="btn-tg">فروش گروه تلگرام</a>
-  </section>
+    <!-- آموزش‌ها -->
+    <section id="courses">
+        <h2>آموزش‌ها</h2>
+        <div class="courses">
+            <div class="course-card">
+                <h3>روندها (Trend)</h3>
+                <img src="https://i.imgur.com/4AiXzf8.jpg" alt="Trend">
+                <p>یاد بگیرید روند صعودی، نزولی و خنثی را تشخیص دهید.</p>
+            </div>
+            <div class="course-card">
+                <h3>کندل‌ها (Candlestick)</h3>
+                <img src="https://i.imgur.com/MTp8aMa.jpg" alt="Candlestick">
+                <p>الگوهای کندل و نقاط بازگشتی را بشناسید.</p>
+            </div>
+            <div class="course-card">
+                <h3>پرایس اکشن (Price Action)</h3>
+                <img src="https://i.imgur.com/3vslS1Y.jpg" alt="Price Action">
+                <p>حمایت، مقاومت و استراتژی‌های کاربردی پرایس اکشن.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- بخش استارز  -->
-  <section>
-    <h2>استارز تلگرام (ارز خرید تلگرام)</h2>
-    <ul class="price-list">
-      <li>۵۰ عدد <span class="price">۹۰,۰۰۰ تومان</span></li>
-      <li>۱۰۰ عدد <span class="price">۱۷۰,۰۰۰ تومان</span></li>
-      <li>۵۰۰ عدد <span class="price">۸۰۰,۰۰۰ تومان</span></li>
-      <li>۱۰۰۰ عدد <span class="price">۱,۴۰۰,۰۰۰ تومان</span></li>
-    </ul>
-    <p class="desc">
-      تعداد غیر رند قیمت متفاوت و بالاتری دارد.<br />
-      استارزهایی که روی شماره ایران دونیت می‌شوند، قابلیت انتقال ندارند.<br />
-      واریز استارز معمولاً بین ۱۰ دقیقه تا ۲ ساعت پس از پرداخت انجام می‌شود.
-    </p>
-    <a href="https://t.me/group7sell" target="_blank" class="btn-tg">خرید استارز تلگرام</a>
-  </section>
+    <!-- تمرین -->
+    <section id="practice">
+        <h2>تمرین و چارت</h2>
+        <p>نمودار تعاملی (به صورت نمونه تصویر زیر):</p>
+        <img src="https://i.imgur.com/oD2KZf1.jpg" alt="Practice Chart">
+        <p>می‌توانید تمرین کنید و نقاط ورود و خروج را مشخص کنید.</p>
+    </section>
 
-  <!-- بخش تلگرام پرمیوم -->
-  <section>
-    <h2>تلگرام پرمیوم</h2>
-    <ul class="price-list">
-      <li>۳ ماهه <span class="price">۱,۲۰۰,۰۰۰ تومان</span></li>
-      <li>۶ ماهه <span class="price">۱,۷۰۰,۰۰۰ تومان</span></li>
-      <li>۱۲ ماهه <span class="price">۲,۷۰۰,۰۰۰ تومان</span></li>
-    </ul>
-    <p class="desc">
-      پرمیوم‌ها بدون نیاز به ورود به اکانت ارائه می‌شوند.<br />
-      فعال‌سازی پرمیوم تلگرام معمولاً بین ۱۰ دقیقه تا ۲ ساعت پس از پرداخت انجام می‌شود.
-    </p>
-    <a href="https://t.me/group7sell" target="_blank" class="btn-tg">خرید تلگرام پرمیوم</a>
-  </section>
+    <!-- دانلود جزوه -->
+    <section id="download">
+        <h2>دانلود جزوه</h2>
+        <p>جزوه کامل آموزش ترید با روندها، کندل‌ها و پرایس اکشن</p>
+        <button onclick="alert('نسخه PDF آماده دانلود نیست، بعداً اضافه می‌شود!')">دانلود جزوه</button>
+    </section>
+
+    <!-- درباره ما -->
+    <section id="about">
+        <h2>درباره ما</h2>
+        <p>تیم آموزش ترید هوشمند، با هدف یادگیری ساده و عملی پرایس اکشن و کندل‌ها.</p>
+    </section>
+
+    <!-- تماس با ما -->
+    <section id="contact">
+        <h2>تماس با ما</h2>
+        <form onsubmit="alert('پیام ارسال شد!'); return false;">
+            <label>نام:</label><br>
+            <input type="text" required><br><br>
+            <label>ایمیل:</label><br>
+            <input type="email" required><br><br>
+            <label>پیام:</label><br>
+            <textarea required></textarea><br><br>
+            <button type="submit">ارسال پیام</button>
+        </form>
+    </section>
 
 </main>
 
-<div class="telegram-info">
-  اگر لینک‌ها به هر دلیلی کار نکرد، لطفاً به صورت دستی آی‌دی تلگرام زیر را جستجو کنید: <br />
-  <strong>@group7sell</strong>
-</div>
-
 <footer>
-  © 2025 GroupSell | طراحی شده توسط Elyas
+    <p>© 2025 آموزش ترید هوشمند</p>
 </footer>
 
 </body>
